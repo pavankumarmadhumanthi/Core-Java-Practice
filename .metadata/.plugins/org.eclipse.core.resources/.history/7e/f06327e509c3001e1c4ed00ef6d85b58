@@ -1,0 +1,14 @@
+package com.ashokit;
+
+public class ChildExceptionHandler extends Exception {
+	
+	
+		
+		public static void main(String[] args) {
+			int num = 10;
+			int value = num / 0;
+			Exception e =new ArithmeticException();
+			e.
+		}
+
+}

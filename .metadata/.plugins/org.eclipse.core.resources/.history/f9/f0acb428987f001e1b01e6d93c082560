@@ -1,0 +1,11 @@
+package com.setters;
+
+public class PetrolEng implements Engine {
+
+	@Override
+	public void start() {
+		System.out.println("petrol engine Started");
+		
+	}
+
+}

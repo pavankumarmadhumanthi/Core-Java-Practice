@@ -1,0 +1,8 @@
+package com.example;
+
+public class Check_ArrayList_Contain_Odd_Numbers {
+	public static void main(String[] args) {
+	List.of(1,2,3,3,5,5,67,76);
+
+}
+}

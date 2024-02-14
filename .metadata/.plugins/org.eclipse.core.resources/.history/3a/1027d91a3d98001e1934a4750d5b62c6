@@ -1,0 +1,6 @@
+package com.java.ThreadExamples;
+
+public class MyThread extends Thread {
+	
+
+}

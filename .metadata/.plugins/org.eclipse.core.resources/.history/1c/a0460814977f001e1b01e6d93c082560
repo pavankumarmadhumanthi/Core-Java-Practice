@@ -1,0 +1,10 @@
+package com.setters;
+
+public interface Engine {
+	public static void PetrolEng() {
+		System.out.println("Petrol engine Started");
+	}
+	public static void DeiselEng() {
+		System.out.println("deisel engine started");
+	}
+}

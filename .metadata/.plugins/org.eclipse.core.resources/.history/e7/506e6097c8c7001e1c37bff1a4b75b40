@@ -1,0 +1,20 @@
+package com.example;
+
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class ReverseLinkedList {
+	public static void main(String[] args) {
+		List<Integer> ll=new LinkedList<>();
+		ll.add(12);
+		ll.add(54);
+		ll.add(33);
+		ll.add(9);
+		ll.add(56);
+		ll.sort((e1,e2)->e2.compareTo(e1));
+		System.out.println(ll);
+	}
+	
+
+}

@@ -1,0 +1,10 @@
+package com.java.string_operations;
+
+public class Remove_whitespaces {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

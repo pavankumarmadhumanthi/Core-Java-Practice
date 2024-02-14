@@ -1,0 +1,10 @@
+package com.java.string_operations;
+
+public class Removing_specialcharacters {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

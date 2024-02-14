@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+<table>
+	<tr>
+	<div>
+		<td><div><a href="#register">addUser</a></div></td>
+		<td><div><a href="getall">viewUser</a></div></td>
+	</div>
+	</tr>
+	<div>
+		<div id="register">
+			<form action="insert">
+				UserName: <input type="text" name="username"><br>
+				<br>
+				UserEmail: <input type="text" name="useremail"> <br><br>
+				
+				UserPhno:<input type="number" name="userphno"><br><br>
+				
+								<input type="submit" value="add book">
+			</form>
+		</div>
+		<div>
+
+			<table border="2">
+				<tr>
+					<th>UserId</th>
+					<th>UserName</th>
+					<th>UserEmail</th>
+					<th>UserPhno</th>
+					<th>Action</th>
+				</tr>
+
+				<c:if test="${data.size() == 0 }">
+					<tr>
+						<td colspan=4><c:out value="no records found"></c:out></td>
+					</tr>
+				</c:if>
+
+				<!-- Arranging data in tabular form -->
+
+				<c:forEach items="${userdata}" var="user">
+					<tr>
+						<td>${user.userid }</td>
+						<td>${user.username }</td>
+						<td>${user.useremail }</td>
+						<td>${user.userphno}</td>
+						<td><a href="update?id=<c:out value='${user.userid}' />">edit</a>
+						<a href="delete?id=<c:out value='${user.useremail}' />">delete</a>
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+	</div>
+	</table>
+
+
+</body>
+</html>

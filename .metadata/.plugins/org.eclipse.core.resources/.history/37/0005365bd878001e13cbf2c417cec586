@@ -1,0 +1,77 @@
+package com.user;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/")
+public class UserController extends HttpServlet {
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String path = req.getServletPath();
+		String username = req.getParameter("username");
+		String useremail = req.getParameter("useremail");
+		String userphno = req.getParameter("userphno");
+		UserDao userdao=new UserDao();
+
+		UserModel usermodel = new UserModel();
+		switch (path) {
+		case "/insert":
+
+			usermodel = new UserModel(username, useremail, Integer.parseInt(userphno));
+			try {
+				boolean insertUser = userdao.InsertUser(usermodel);
+				req.setAttribute("success",insertUser);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/update":
+			try {
+				boolean updateUser = userdao.updateUser(usermodel);
+				req.setAttribute("success",updateUser);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/delete":
+			try {
+				boolean deleteUser = userdao.deleteUser(usermodel);
+				req.setAttribute("success",deleteUser);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			break;
+		case "/getall":
+			try {
+				List<UserModel> getallUsers = userdao.getallUsers();
+				req.setAttribute("userdata",getallUsers);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		}
+		RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+		dispatcher.include(req, resp);
+
+	}
+}

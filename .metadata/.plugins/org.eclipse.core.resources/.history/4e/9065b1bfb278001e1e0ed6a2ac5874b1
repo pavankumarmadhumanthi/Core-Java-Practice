@@ -1,0 +1,27 @@
+package com.user;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class UserController extends HttpServlet {
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String username = req.getParameter("username");
+		String useremail = req.getParameter("useremail");
+		String userphno = req.getParameter("userphno");
+		
+		UserModel usermodel=new UserModel();
+		usermodel.setUsername(username);;
+		usermodel.setUseremail(useremail);
+		usermodel.setUserphno(Integer.parseInt(userphno));
+	}
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+	}
+
+}

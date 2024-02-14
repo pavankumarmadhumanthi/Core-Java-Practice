@@ -1,0 +1,97 @@
+package com.user;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/")
+public class UserController extends HttpServlet {
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String path = req.getServletPath();
+		String username = req.getParameter("username");
+		String useremail = req.getParameter("useremail");
+		String userphno = req.getParameter("userphno");
+		UserDao1 dao=new UserDao1();
+		UserModel usermodel = new UserModel();
+		
+		switch (path) {
+		case "/insert":
+
+		
+			try {
+				boolean insertUser = dao.InsertUser(usermodel);
+				req.setAttribute("success",insertUser);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/getall":
+			try {
+				List<UserModel> getallUsers = dao.getallUsers();
+				req.setAttribute("userdata",getallUsers);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/update":
+			try {
+				
+				usermodel.setUsername(username);
+				usermodel.setUseremail(useremail);
+				usermodel.setUserphno(Integer.parseInt(userphno));
+				boolean updateUser = dao.updateUser(usermodel);
+				req.setAttribute("success",updateUser);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/delete":
+			try {
+				boolean deleteUser = dao.deleteUser(usermodel);
+				req.setAttribute("success",deleteUser);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			break;
+
+		case "/edit":
+			try {
+				String id = req.getParameter("id");
+				usermodel.setUserid(Integer.parseInt(id));
+				List<UserModel> getUserById= dao.getUserById(usermodel);
+				req.setAttribute("user",getUserById);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		}
+		
+
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("index1.jsp");
+		dispatcher.include(req, resp);
+
+	}
+}
+

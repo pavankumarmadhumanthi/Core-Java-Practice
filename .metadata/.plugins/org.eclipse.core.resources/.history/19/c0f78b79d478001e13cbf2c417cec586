@@ -1,0 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div> 
+	<div>addUser</div>
+	<div>viewUser</div>
+</div>
+<div>
+	<div>
+	<form>
+		UserName: <input type="text"  name="username">
+		UserEmail: <input type="text"  name="useremail">
+		UserPhno:<input type="number" name="userphno">
+	</form>
+	</div>
+	<div>
+	
+		<table border="2">
+			<tr>
+				<th>UserId</th>
+				<th>UserName</th>
+				<th>UserEmail</th>
+				<th>UserPhno</th>
+			</tr>
+			
+			<c:if test="${data.size() == 0 }">
+			<tr>
+			<td colspan=4>
+			<c:out value="no records found"></c:out>
+			</td>
+			</tr>
+			</c:if>
+
+			<!-- Arranging data in tabular form -->
+
+			<c:forEach items="${data}" var="product">
+				<tr>
+					<td>${product.bookid }</td>
+					<td>${product.bookname }</td>
+					<td>${product.bookprice }</td>
+					<td>${product.authorname}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+	<div>
+	<h1>footer</h1>
+	</div>
+</div>
+
+</body>
+</html>

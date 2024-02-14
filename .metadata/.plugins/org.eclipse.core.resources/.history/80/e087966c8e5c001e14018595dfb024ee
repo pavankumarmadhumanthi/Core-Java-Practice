@@ -1,0 +1,29 @@
+package com.java.string_operations;
+
+public class Removing_repeated_char {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "PavanKumarMadhumanthi";
+		char[] name = new char[str.length()];
+		for (int i = 0; i < str.length(); i++) {
+			name[i] = str.charAt(i);
+		}
+		int flag=0;
+		char[] str1 = new char[str.length()];
+		for (int i = 0; i < name.length; i++) {
+			for (int j = i+1; j < name.length; j++) {
+				if (name[i]==name[j]) {
+					flag=flag+1;
+					if(flag==1) {
+						System.out.println(name[i])
+					}
+				}
+			}
+
+		}
+		System.out.println(str1);
+
+	}
+
+}

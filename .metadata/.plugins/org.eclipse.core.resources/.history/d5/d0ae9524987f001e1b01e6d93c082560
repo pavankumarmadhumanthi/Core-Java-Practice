@@ -1,0 +1,5 @@
+package com.setters;
+
+public interface Engine {
+	public void start();
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ConnectionFactory.java&apos; to &apos;StudentDetails/src/main/java/Student_data&apos;&#x0D;&#x0A;- Original project: &apos;Hikari_pooling_techinque&apos;&#x0D;&#x0A;- Destination element: &apos;StudentDetails/src/main/java/Student_data&apos;&#x0D;&#x0A;- Original element: &apos;com.hikaripractice.ConnectionFactory.java&apos;" description="Copy compilation unit" destination="=StudentDetails/src\/main\/java&lt;Student_data" element1="/src&lt;com.hikaripractice{ConnectionFactory.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1697537539477" units="1" version="1.0"/>
+</session>

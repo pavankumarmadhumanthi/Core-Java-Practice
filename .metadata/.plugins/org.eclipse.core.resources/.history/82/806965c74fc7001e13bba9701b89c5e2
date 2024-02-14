@@ -1,0 +1,11 @@
+package com.example;
+
+public class StringReverse {
+	
+	String str="pavankumar";
+	StringBuffer buffer=new StringBuffer();
+	for(int i=0;i<str.lenght;i++) {
+		
+	}
+
+}

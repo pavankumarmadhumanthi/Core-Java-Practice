@@ -1,0 +1,82 @@
+package com.user;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class UserController extends HttpServlet {
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String username = req.getParameter("username");
+		String useremail = req.getParameter("useremail");
+		String userphno = req.getParameter("userphno");
+
+		UserModel usermodel = new UserModel();
+		usermodel.setUsername(username);
+		;
+		usermodel.setUseremail(useremail);
+		usermodel.setUserphno(Integer.parseInt(userphno));
+		UserDao userdao = new UserDao();
+		try {
+			boolean insertUser = userdao.InsertUser(usermodel);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		UserDao userdao = new UserDao();
+		String path = req.getServletPath();
+		String username = req.getParameter("username");
+		String useremail = req.getParameter("useremail");
+		String userphno = req.getParameter("userphno");
+
+		UserModel usermodel = new UserModel();
+		switch (path) {
+		case "/insert":
+
+			usermodel = new UserModel(username, useremail, Integer.parseInt(userphno));
+			try {
+				userdao.InsertUser(usermodel);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/update":
+			try {
+				userdao.updateUser(usermodel);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/delete":
+			try {
+				userdao.deleteUser(usermodel);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			break;
+		case "/getall":
+			try {
+				userdao.getallUsers();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		}
+
+	}
+}

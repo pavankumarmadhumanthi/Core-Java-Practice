@@ -1,0 +1,25 @@
+package com.ashokit;
+
+class ParentExceptionHandler extends ArithmeticException {
+
+	private static final long serialVersionUID = 1L;
+
+	public void ArithmeticException(String s) {
+		System.out.println("Arithmetic Exception is Occured");
+
+	}
+}
+
+public class ChildExceptionHandler extends ParentExceptionHandler {
+	public void ArithmeticException(String s) {
+		System.out.println("Arithmetic Exception is Occured");
+
+	}
+		
+		public static void main(String[] args) {
+			int num = 10;
+			int value = num / 0;
+
+		}
+
+}

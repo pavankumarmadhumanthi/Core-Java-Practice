@@ -1,0 +1,10 @@
+package com.setters;
+
+public class Car{
+	Engine eng;
+	public Car( Engine eng) {
+		this.eng=eng;
+		
+	}
+
+}

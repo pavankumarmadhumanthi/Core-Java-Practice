@@ -1,0 +1,25 @@
+package com.crud;
+
+import java.util.List;
+
+public class UserDao {
+
+	public boolean createUser() {
+		
+
+	}
+
+	public boolean updateUser() {
+	}
+	
+	public boolean deleteUser() {
+		
+	}
+	public List<User> retrieveAllUsers(){
+		
+	}
+	public User retrieveUser() {
+		
+	}
+	
+}

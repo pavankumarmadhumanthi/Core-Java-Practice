@@ -1,0 +1,20 @@
+package com.setters;
+
+public class PetrolEng implements Engine{
+
+	@Override
+	public void PetrolEng() {
+		// TODO Auto-generated method stub
+		System.out.println("petrol Engine");
+		
+	}
+
+	@Override
+	public void DeiselEng() {
+		// TODO Auto-generated method stub
+		System.out.println("diesal Engine");
+
+		
+	}
+
+}

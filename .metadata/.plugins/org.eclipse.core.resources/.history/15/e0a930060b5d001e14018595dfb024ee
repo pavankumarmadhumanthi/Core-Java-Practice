@@ -1,0 +1,10 @@
+package com.java.string_operations;
+
+public class Reverse_eachword_instring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

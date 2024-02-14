@@ -1,0 +1,6 @@
+package com.setters;
+
+public interface Engine {
+	public void PetrolEng();
+	public void DeiselEng();
+}

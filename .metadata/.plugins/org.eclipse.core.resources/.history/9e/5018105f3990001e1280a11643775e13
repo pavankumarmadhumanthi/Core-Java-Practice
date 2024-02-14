@@ -1,0 +1,28 @@
+package com.java.iterator;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
+
+
+public class Iterator_practice {
+	public static void main(String[] args) {
+		//iterator is interface
+		//introduced for iterating the all collection objects
+		ArrayList<Integer> al=new ArrayList<>();
+		al.add(34);
+		al.add(342);
+		al.add(34);
+		
+		Iterator<Integer> i=al.iterator();
+		while(i.hasNext()) {
+			i.next();
+		}
+		ListIterator<Integer> lis = al.listIterator();
+		while(lis.hasNext()) {
+			System.out.println(lis.nextIndex());
+			System.out.println(lis.next());
+		}
+		
+}
+}

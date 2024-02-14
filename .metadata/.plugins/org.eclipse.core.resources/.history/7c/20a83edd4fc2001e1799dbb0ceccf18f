@@ -1,0 +1,14 @@
+package com.ashokit;
+
+public class ChildExceptionHandler extends RuntimeException{
+
+	private static final long serialVersionUID = 1L;
+	public static void main(String[] args) {
+		ChildExceptionHandler childExceptionHandler = new ChildExceptionHandler();
+		childExceptionHandler.
+	}
+	
+
+
+	
+}

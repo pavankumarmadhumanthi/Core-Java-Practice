@@ -1,0 +1,27 @@
+package com.java.iterator;
+
+import java.util.HashSet;
+
+public class Custom_obj_iterator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		HashSet<Person> persons=new HashSet<>();
+		persons.add(new Person(101,"employee1",34242));
+		
+
+	}
+
+}
+class Person{
+	int age;
+	String name;
+	int salary;
+	
+	public Person(int age,String name,int salary) {
+		this.age=age;
+		this.name=name;
+		this.salary=salary;
+	}
+}
